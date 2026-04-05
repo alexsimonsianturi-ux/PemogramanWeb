@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi 243036</title>
+        <style>
+            .kotak{
+                position: relative;
+                width: 150px;
+                height: 150px;
+            }
+
+            img{
+                width : 150px;
+            }
+
+            .corner{
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                border: 5px solid #FF0000;
+            }
+
+            .top-left {
+                top: 0;
+                left: 0;
+                border-right: none;
+                border-bottom: none;
+            }
+
+            .top-right {
+                top: 0;
+                right: 0;
+                border-left: none;
+                border-bottom: none;
+            }
+
+            .bottom-left {
+                bottom: 0;
+                left: 0;
+                border-right: none;
+                border-top: none;
+            }
+
+            .bottom-right {
+                bottom: 0;
+                right: 0;
+                border-left: none;
+                border-top: none;
+            }
+
+            .kotak:hover .corner{
+                border-color:#FF00FF;
+            }
+        </style>
+    </head>
+    <body>
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="#">
+                        <div class="kotak">
+                            <img src="./src/star.jpg">
+
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi-2473036</title>
+        <style>
+
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            ul{
+                list-style: none;
+                padding: 0%;
+                margin: 0%;
+            }
+
+            .bar li{
+                display: inline-block;
+                position: relative;
+                margin-right: 3px;
+                border-style: dotted;
+                border-color: grey;
+                border-width: 2px;
+            }
+
+            .bar a{
+                text-decoration: none;
+                padding: 5px 40px;
+                display: block;
+                color : black;
+            }
+
+            .bar a:hover{
+                background-color: black;
+                color: white;
+            }
+
+            .submenu{
+                display : none;
+                position: absolute;
+                top: 100;
+                left: 0;
+            }
+
+            .dropdown:hover .submenu{
+                display: block;
+            }
+
+            .submenu li{
+                display: block;
+                width:150 px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <ul class="bar">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown"><a href="#">News</a>
+                <ul class="submenu">
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Movie</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </body>
+</html>
