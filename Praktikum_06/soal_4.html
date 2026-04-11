@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Alex simon sianturi-2473036</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 300px;
+            }
+
+            td {
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            input {
+                width: 100%;
+            }
+
+            .center {
+                text-align: center;
+            }
+    </style>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr>
+                    <td>Input</td>
+                    <td><input type="text" id="input"></td>
+                </tr>
+
+                <tr>
+                    <td>Output</td>
+                    <td><input type="text" id="output" readonly></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="center">
+                        <select id="mode">
+                            <option value="d2b">decimal-biner</option>
+                            <option value="b2d">biner-decimal</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="center">
+                        <button type="button" onclick="proses()">PROSES</button>
+                        <button type="reset">RESET</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+            function proses() {
+                let input = document.getElementById("input").value;
+                let mode = document.getElementById("mode").value;
+                let output = "";
+                
+
+                if (mode === "d2b") {
+                    let num = parseInt(input);
+
+                    if (isNaN(num)) {
+                        output = "input tidak valid";
+                    } else if (num === 0) {
+                        output = "0";
+                    } else {
+                        while (num > 0) {
+                            output = (num % 2) + output;
+                            num = Math.floor(num / 2);
+                        }
+                    }
+
+                    } else {
+                        if (input.length !== 8) {
+                            output = "harus 8 digit";
+                        } else {
+                            let valid = true;
+
+                            for (let i = 0; i < input.length; i++) {
+                                if (input[i] !== "0" && input[i] !== "1") {
+                                    valid = false;
+                            }
+                        }
+
+                        if (!valid) {
+                            output = "hanya 0 dan 1";
+                        }
+                        else {
+                            let total = 0;
+                            for (let i = 0; i < input.length; i++) {
+                                total += parseInt(input[i]) * Math.pow(2, input.length - i - 1);
+                        }
+                        output = total;
+                    }
+                }
+            }
+
+             document.getElementById("output").value = output;
+        }
+        </script>
+
+    </body>
+</html>

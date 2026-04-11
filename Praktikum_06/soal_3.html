@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon siantur-2473036</title>
+    </head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 800px;
+            height: 600px;
+            margin-top: 20px;
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+
+        .isi {
+            background-color:#fea500;
+            border: 2px solid #f0db80;
+        }
+    </style>
+    <body>
+        <label>Tinggi Piramida:</label>
+        <input type="text" id="inputtinggi">
+        <br><br>
+        <button onclick="buatPiramida()">Proses</button>
+
+        <table id="tabelpiramida"></table>
+
+        <script>
+            function buatPiramida() {
+                var tinggi = parseInt(document.getElementById("inputtinggi").value, 10);
+                var tabel = document.getElementById("tabelpiramida");
+
+                tabel.innerHTML = "";
+
+                for (var i = 1; i <= tinggi; i++) {
+                    var baris = "<tr>";
+
+                for (var j = 1; j <= tinggi - i; j++) {
+                    baris += "<td></td>";
+                }
+                for (var k = 1; k <= (2 * i - 1); k++) {
+                    baris += "<td class='isi'></td>";
+                }
+                for (var j = 1; j <= tinggi - i; j++) {
+                    baris += "<td></td>";
+                }
+                baris += "</tr>";
+                tabel.innerHTML += baris;
+                }
+            }
+        </script>
+    </body>
+</html>

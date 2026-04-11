@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi-2473036</title>
+        <style>
+            td {
+                border: 2px solid black;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var inputAngka;
+            var angka;
+
+            inputAngka = prompt("A number?");
+
+            while (isNaN(inputAngka) || inputAngka == "" || inputAngka == null) {
+                inputAngka = prompt("A number?");
+            }
+
+            angka = parseInt(inputAngka, 10);
+
+            document.write("<table>");
+            
+            for (var counter = 1; counter <= angka; counter++) {
+                document.write("<tr>");
+                document.write("<td>" + counter + "</td>");
+                document.write("<td>x</td>");
+                document.write("<td>" + angka + "</td>");
+                document.write("<td>=</td>");
+                document.write("<td>" + (counter * angka) + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        </script>
+
+    </body>
+</html>
