@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi - 2473036</title>
+    </head>
+    <script>
+        var arr =[];
+
+        function tambahData(){
+            var input = document.getElementById("txtData").value;
+
+            if(input != ""){
+                arr.push(Number(input));
+                document.getElementById("txtData").value = "";
+            }
+        }
+
+        function proses(){
+            var pilih = document.getElementById("operasi").value;
+            var hasil = "";
+
+             if(pilih == "display"){
+                hasil = arr.join(", ");
+            }
+
+            else if(pilih == "count"){
+                hasil = arr.length;
+            }
+
+            else if(pilih == "sum"){
+                var total = 0;
+                for(var i=0; i<arr.length; i++){
+                    total += arr[i];
+                }
+                hasil = total;
+            }
+
+            else if(pilih == "average"){
+                var total = 0;
+                for(var i=0; i<arr.length; i++){
+                    total += arr[i];
+                }
+                hasil = total / arr.length;
+            }
+
+            else if(pilih == "max"){
+                if(arr.length > 0){
+                    var max = arr[0];
+                    for(var i = 1; i < arr.length; i++){
+                        if(arr[i] > max){
+                            max = arr[i];
+                        }
+                    }
+                    hasil = max;
+                }
+            }
+
+            else if(pilih == "min"){
+                var min = arr[0];
+                for(var i=0; i<arr.length; i++){
+                    if(arr[i] < min){
+                        min = arr[i];
+                    }
+                }
+                hasil = min;
+            }
+
+            else if(pilih == "ganjil"){
+                var ganjil = [];
+                for(var i=0; i<arr.length; i++){
+                    if(arr[i] % 2 != 0){
+                        ganjil.push(arr[i]);
+                    }
+                }
+                hasil = ganjil.join(", ");
+            }
+
+            else if(pilih == "genap"){
+                var genap = [];
+                for(var i=0; i<arr.length; i++){
+                    if(arr[i] % 2 == 0){
+                        genap.push(arr[i]);
+                    }
+                }
+                hasil = genap.join(", ");
+            }
+
+            else if(pilih == "hapus"){
+                data = [];
+                hasil = "";
+            }
+
+            document.getElementById("txtHasil").value = hasil;
+        }
+    </script>
+
+    <style>
+
+        .label{
+            font-size: 24px;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+
+    </style>
+    <body>
+        <table>
+            <tr>
+                <td class="label">Data</td>
+                <td><input type="text" id="txtData"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="tambahData()">Add</button>
+
+                    <select id="operasi" onchange="proses()">
+                        <option value="">Pilih Operasi</option>
+                        <option value="display">Display</option>
+                        <option value="count">Count</option>
+                        <option value="sum">Sum</option>
+                        <option value="average">Average</option>
+                        <option value="max">Max</option>
+                        <option value="min">Min</option>
+                        <option value="ganjil">Ganjil</option>
+                        <option value="genap">Genap</option>
+                        <option value="hapus">Hapus</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Hasil</td>
+                <td><input type="text" id="txtHasil" readonly></td>
+            </tr>
+        </table>
+    </body>
+</html>

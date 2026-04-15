@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi - 2473036 </title>
+    </head>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 400px;
+
+        }
+        th, td {
+            border:1px solid white;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #aabbaa;
+
+        }
+
+        .barisbiru {
+            background-color:#aaccff;
+        }
+        .barisoren {
+            background-color: #ffccaa;
+        }
+
+        .c3 {
+            background-color: #CCFFAA;
+        }
+    </style>
+
+    <body>
+
+        <table>
+            <tr>
+                <th>Position</th>
+                <th>Programing Language</th>
+                <th>Ratings</th>
+            </tr>
+
+            <tr id="row1" class="barisbiru" onmouseover="highLight('row1')" onmouseout="normal('row1', 'barisbiru')">
+                <td>1</td>
+                <td>C</td>
+                <td>18.058%</td>
+            </tr>
+
+            <tr id="row2" class="barisoren" onmouseover="highLight('row2')" onmouseout="normal('row2', 'barisoren')">
+                <td>2</td>
+                <td>Java</td>
+                <td>18.051%%</td>
+            </tr>
+
+            <tr id="row3" class="barisbiru" onmouseover="highLight('row3')" onmouseout="normal('row3', 'barisbiru')">
+                <td>3</td>
+                <td>C++</td>
+                <td>9.707%</td>
+            </tr>
+
+           <tr id="row4" class="barisoren" onmouseover="highLight('row4')" onmouseout="normal('row4', 'barisoren')">
+                <td>4</td>
+                <td>PHP</td>
+                <td>9.662%</td>
+            </tr>
+
+            <tr id="row5" class="barisbiru" onmouseover="highLight('row5')" onmouseout="normal('row5', 'barisbiru')">
+                <td>5</td>
+                <td>(Visual) Basic</td>
+                <td>6.392%</td>
+            </tr>
+        </table>
+
+        <script>
+            function highLight(idBaris) {
+                document.getElementById(idBaris).className = "c3";
+            }
+
+            function normal(idBaris, warnaAsli) {
+                document.getElementById(idBaris).className = warnaAsli;
+
+            }
+        </script>
+    </body>
+</html>

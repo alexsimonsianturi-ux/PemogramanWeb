@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi-2473036</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            td {
+                padding: 5px;
+                vertical-align: top;
+            }
+            
+            textarea {
+                width: 164px;
+                height: 100px;
+            }
+
+            .counter {
+                text-align: right;
+                padding-right: 5px;
+            }
+
+            #txt2 {
+                width: 60px;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            function call_onKeyPress(ob){
+                var obval = ob.value;
+
+                document.getElementById("txt2").value = obval.length + "/256";
+
+                if(obval.length > 256){
+                    ob.value = obval.substr(0,256);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td >Judul</td>
+                <td>:
+                     <input type="text">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Deskripsi</td>
+                <td>:
+                    <textarea 
+                    onkeyup="call_onKeyPress(this)" onkeydown="call_onKeyPress(this)">
+                    </textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="counter">
+                    <input type="text" id="txt2" value="0/256" readonly>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
