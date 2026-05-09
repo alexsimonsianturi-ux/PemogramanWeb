@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi_2473036</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $("#buttonnAdd").click(function(){
+                    var nama = $("#textnama").val();
+
+                    $("#daftar").append("<div class='nama'>" + nama + "</div>");
+                });
+
+                $("#buttonSearch").click(function(){
+                    $(".nama").removeClass("hasil");
+
+                    var cari = $("#textnama").val();
+
+                    $(".nama:contains('" + cari + "')").addClass("hasil");
+                });
+            });      
+        </script>
+
+        <style>
+            #box{
+                width: 300px;
+                background: #eee;
+                padding: 10px;
+            }
+
+            .nama{
+                margin-top: 5px;
+            }
+
+            .hasil{
+                text-decoration: underline;
+            } 
+        </style>
+    </head>
+
+    <body>
+        <div id="box">
+            <input type="text" id="textnama">
+
+            <button id="buttonnAdd">Add</button>
+
+            <button id="buttonSearch">Search</button>
+
+            <div id="daftar">
+                <div class="nama">John Resig</div>
+                <div class="nama">George Martin</div>
+                <div class="nama">Malcom John Sinclair</div>
+                <div class="nama">J. Ohn</div>
+            </div>
+        </div>
+
+    </body>
+</html>

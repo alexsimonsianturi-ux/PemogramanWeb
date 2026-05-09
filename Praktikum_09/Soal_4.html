@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi_2473036</title>
+        <script type="text/javascript" src="jquery.js"></script>
+
+         <script type="text/javascript">
+        /* 
+            $(".header").click(function(){
+
+                #ngga kebaca bang di browser jadi pas gua click checkboxnya yang lain ga ikut ke klik
+                var flag = $(this).attr("checked");
+                
+                if(flag){
+                    $("input:checkbox.body").attr("checked","checked");
+
+                }
+
+                else{
+
+                    $("input:checkbox.body").removeAttr("checked");
+                }
+            });
+        */
+              $(document).ready(function(){
+                $(".header").click(function(){
+
+                    if(this.checked){
+                        $("input:checkbox.body")
+                        .attr("checked","checked");
+                    }
+
+                    else{
+                        $("input:checkbox.body")
+                        .removeAttr("checked");
+                    }
+                });
+            });
+        </script>
+
+        <style>
+        td{
+            Width :50px;
+            text-align: center;
+        }
+        </style>
+
+    </head>
+
+    <body>
+        <table border="1" cellpadding="0" cellspacig="0">
+            <tr>
+                <td>
+                    <input class="header" type="checkbox">
+                    <hr/>
+
+                    <input class="body" type="checkbox"><br/>
+                    <input class="body" type="checkbox"><br/>
+                    <input class="body" type="checkbox"><br/>
+                    <input class="body" type="checkbox"><br/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

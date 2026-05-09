@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi_2473036</title>
+        <script type="text/javascript" src="jquery.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $("li.item ol").hide();
+
+                $("li.item").hover(
+                    function(){
+                        $("li.item ol").hide();
+                        $(this).children("ol").show();
+                    },
+                    function(){
+                        $(this).children("ol").hide();
+                    }
+                );
+
+            });
+        </script>
+
+        <style>
+            body{
+                font-family: Arial;
+            }
+
+            #menu{
+                width: 500px;
+                background: #eee;
+                padding: 10px;
+            }
+
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            li.item{
+                width: 100px;
+                background: deeppink;
+                color: white;
+                float: left;
+                margin-right: 10px;
+                position: relative;
+                padding: 3px;
+                cursor: pointer;
+            }
+
+            li.item ol{
+                background: white;
+                color: black;
+                position: absolute;
+                top: 25px;
+                left: 0;
+                width: 120px;
+                padding: 5px;
+                border: 2px solid deeppink;
+            }
+
+            li.item ol li{
+                list-style: none;
+            }
+
+            a{
+                text-decoration: underline;
+                color: black;
+            }
+
+            li{
+                text-decoration: underline;
+            }
+
+            .clear{
+                clear: both;
+            }
+        </style>
+    </head>   
+
+    <body>
+        <div id="menu">
+            <ul>
+                <li class="item">Jquery
+                    <ol>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ol>
+                </li>
+
+                <li class="item">Community
+                    <ol>
+                        <li><a href="#">Mailing List</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Demons</a></li>
+                        <li><a href="#">Plugins</a></li>
+                    </ol>
+                </li>
+
+                <li class="item">Development
+                    <ol>
+                        <li><a href="#">Source Code</a></li>
+                        <li><a href="#">Bug Tracking</a></li>
+                        <li><a href="#">Recent Changes</a></li>
+                    </ol>
+                </li>
+            </ul>
+
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

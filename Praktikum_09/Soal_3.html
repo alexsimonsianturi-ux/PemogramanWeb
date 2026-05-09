@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi_2473036</title>
+        <script type="text/javascript" src="jquery.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("div").click(function(){
+
+                    $(this).addClass("merah");
+                });
+
+                $("button").click(function(){
+                    $("div").each(function(index, domEle){
+
+                        if($(domEle).hasClass("merah")){
+                            return false;
+                        }
+                        $(domEle).addClass("kuning");
+                    });
+                });
+            });
+        </script>
+        
+        <style>
+
+            div{
+                width:40px;
+                height:40px;
+                margin:5px;
+                float:left;
+                border:2px blue solid;
+                text-align:center;
+            }
+
+            .merah{
+                background:red;
+            }
+
+            .kuning{
+                background:yellow;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <button>Change colors</button>
+
+        <br>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </body>
+</html>

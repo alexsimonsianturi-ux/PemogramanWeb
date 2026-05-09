@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi_2473036</title>
+        <script type="text/javascript" src="jquery.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $("#searchBox").keyup(function(){
+                    var keyword = $(this).val().toLowerCase();
+                    
+                    $("li").css("color", "black");
+                    
+                    if(keyword !== "") {
+                        $("li").each(function(){
+                            var perusahaan = $(this).text().toLowerCase();
+                            
+                            if(perusahaan.indexOf(keyword) !== -1) {
+                                $(this).css("color", "red");
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+            }
+
+            .box{
+                background:#f0f0f0;
+                padding :20px;
+                width: 350px;
+                border: 1px solid black;
+            }
+
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box">
+            <input type="text" id="searchBox">
+
+            <ul id="ListPerusahaan">
+                <li>Sun Microsystem</li>
+                <li>Apache Software Foundation</li>
+                <li>Oracle Coorporation</li>
+                <li>International Bussiness Machines</li>
+                <li>Microsoft Coorporation</li>
+                <li>Apple Inc</li>
+                <li>Sap Ag</li>
+                <li>Accenture</li>
+                <li>Computer Sciences Coorporation</li>
+                <li>Google</li>
+                <li>Softbank</li>
+                <li>Yahoo</li>
+            </ul>
+        </div>
+    </body>
+</html>
