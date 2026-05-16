@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi_2473036</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                $("#search").click(function(){
+
+                    var pilihankelas = $("input[name='kelas']:checked").val();
+
+                    var Data = "";
+
+                    if(pilihankelas == "all"){
+                        Data = "nilai.js";
+                    }
+                    else if(pilihankelas == "A"){
+                        Data = "nilaiA.js";
+                    }
+                    else if(pilihankelas == "B"){
+                        Data = "nilaiB.js";
+                    }
+
+                    $.getJSON(Data, function(hasilJSON){
+                        $("#hasil tr:gt(0)").remove();
+
+                        for(var x = 0; x < hasilJSON.nilai.length; x++){
+
+                            var isibaris = "<tr>" +
+                                        "<td>" + hasilJSON.nilai[x].nrp + "</td>" +
+                                        "<td>" + hasilJSON.nilai[x].nama + "</td>" +
+                                        "<td>" + hasilJSON.nilai[x].kelas + "</td>" +
+                                        "<td>" + hasilJSON.nilai[x].nilaiakhir + "</td>" +
+                                        "</tr>";
+
+                            $("#hasil").append(isibaris);
+                        }
+                        $("#hasil tr:gt(0):odd").css("background-color", "#FFFFCC");
+                        $("#hasil tr:gt(0):even").css("background-color", "#CCFFAA");
+                    });
+
+                });
+
+            });
+
+        </script>
+
+
+        <style>
+            table{
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th{
+                background-color: black;
+                color: white;
+                padding: 5px;
+            }
+
+            td{
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3>
+            Selamat! Berikut adalah Daftar Mahasiswa yang mendapat
+            Nilai A Pemrograman Web SI Tahun Ajaran 2023/2024
+        </h3>
+
+        <fieldset>
+            <input type="radio" name="kelas" value="all" > All <br>
+            <input type="radio" name="kelas" value="A"> Kelas A<br>
+            <input type="radio" name="kelas" value="B"> Kelas B<br>
+
+            <button id="search" >Search</button>
+        </fieldset>
+
+        <br>
+
+        <table id="hasil" border="1">
+            <tr>
+                <th>NRP</th>
+                <th>NAMA</th>
+                <th>KELAS</th>
+                <th>NILAI AKHIR</th>
+            </tr>
+        </table>
+        
+    </body>
+
+</html>

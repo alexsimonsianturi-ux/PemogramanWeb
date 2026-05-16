@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex simon sianturi_2473036</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+            function loadJSON(){
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+
+                    if(this.readyState == 4 && this.status == 200){
+                        var data = JSON.parse(this.responseText);
+                        var txt = "";
+
+                        txt += "<table>";
+
+                        txt += "<tr>";
+                        txt += "<td>";
+
+                        txt += "<h1>";
+                        txt += "<a href='" + data.link + "'>";
+                        txt += data.title;
+                        txt += "</a>";
+                        txt += "</h1>";
+
+                        txt += "</td>";
+                        txt += "</tr>";
+
+                        txt += "<tr>";
+                        txt += "<td>";
+
+                        for(var i=0; i<data.items.length; i++){
+                            txt += "<a href='" + data.items[i].link + "'>";
+                            txt += data.items[i].title;
+                            txt += "</a><br>";
+
+                            txt += "By : ";
+                            txt += data.items[i].author;
+                            txt += " / ";
+                            txt += "<i>";
+                            txt += data.items[i].published;
+                            txt += "</i>";
+
+                            txt += "<br><br>";
+
+                            txt += data.items[i].description;
+
+                            txt += "<br><br>";
+
+                            txt += "Universitas : ";
+                            txt += "<a href='" + data.items[i].universitas.link + "'>";
+                            txt += "Click Here";
+                            txt += "</a><br>";
+
+                            txt += "Tag(s) : ";
+                            txt += data.items[i].tags;
+
+                            txt += "<br><br>";
+                        }
+                        txt += "</td>";
+                        txt += "</tr>";
+
+                        txt += "<tr>";
+                        txt += "<td>";
+                        txt += "©" + data.generator;
+                        txt += "</td>";
+                        txt += "</tr>";
+
+                        txt += "</table>";
+
+                        document.getElementById("hasil").innerHTML = txt;
+                    }
+                };
+                xhr.open("GET","SIJson.txt",true);
+                xhr.send();
+            }
+
+        </script>
+        <style>
+            
+            table{
+                width: 630px;
+                border-collapse: collapse;
+            }
+
+            td{
+                border:1px solid black;
+                padding:10px;
+            }
+
+            h1{
+                text-align:center;
+                color:blue;
+                text-decoration:underline;
+            }
+        </style>
+    </head>
+
+    <body>
+       <table>
+        <tr>
+            <td>Title</td>
+        </tr>
+
+        <tr>
+            <td>Content</td>
+        </tr>
+
+        <tr>
+            <td>Generator</td>
+        </tr>
+
+       </table> 
+
+       <br>
+
+       <button onclick="loadJSON()">Look</button>
+
+       <br>
+
+       <div id="hasil"></div>
+
+    </body>
+</html>

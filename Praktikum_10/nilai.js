@@ -1,0 +1,22 @@
+{
+    "nilai":[
+        {
+            "nrp":"1072001",
+            "nama":"Budi",
+            "kelas":"A",
+            "nilaiakhir":"98"
+        },
+        {
+            "nrp":"1072002",
+            "nama":"Andi",
+            "kelas":"B",
+            "nilaiakhir":"80"
+        },
+        {
+            "nrp":"1072003",
+            "nama":"Cindy",
+            "kelas":"A",
+            "nilaiakhir":"70"
+        }
+    ]
+}
