@@ -6,7 +6,7 @@ if(($userLogin == "admin") && ($passLogin == "admin"))
 {
     echo "<h1>Login Berhasil!</h1>";
 
-    echo "<h1>Selamat datang, ".$userLogin.".</h1>";
+    echo "<h1>Selamat datangg, ".$userLogin.".</h1>";
 
     echo "<a href='login.html'>
             kembali ke halaman login
